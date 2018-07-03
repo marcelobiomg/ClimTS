@@ -538,6 +538,7 @@ a.var.mig.TS2 <- function(r.Tmax.LTM = NULL, r.Tmin.LTM = NULL, r.Tmax.TS = NULL
 
     # select months from a single year
     # check if year is before (< than) first year in raster brick
+    {
     # Temperature
     if(y >= frstYrTS){
       y_0 <- as.numeric(grep(y, names(r.Tmax.TS)))
@@ -563,9 +564,10 @@ a.var.mig.TS2 <- function(r.Tmax.LTM = NULL, r.Tmin.LTM = NULL, r.Tmax.TS = NULL
     if(y-2 >= frstYrPTS) {
       yP_2 <- as.numeric(grep(y-2, gsub("X", "", names(r.P.TS))))
     }else{yP_2 <- yP_1}
-
+}
 
     # check if year is after (> than) last year in raster brick
+    {
     # Temperature
     if(y > lastYrTS){
       y_0 <- as.numeric(grep(lastYrTS, names(r.Tmax.TS)))
@@ -584,7 +586,7 @@ a.var.mig.TS2 <- function(r.Tmax.LTM = NULL, r.Tmin.LTM = NULL, r.Tmax.TS = NULL
       print(paste("BE CAUTIOUS! No precipitation data for year:", y, "Using last layers, of year:", lastYrPTS))
     }
     months.yearP.y <- c(yP_2, yP_1, yP_0)
-
+    }
 
     r.Tmax.TSy <- r.Tmax.TS[[months.year.y]]
     r.Tmin.TSy <- r.Tmin.TS[[months.year.y]]
