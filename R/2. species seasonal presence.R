@@ -122,6 +122,7 @@ Eggs_tyranni.geo.L <- a.var.seas(grade.r.NW, OBS=Eggs_tyranni.geo, sp.shp.path, 
 # DF.spp <- EggsT.Seas.test
 # m.bw.sp <- data.frame(species=unique(EggsT.Seas.test$species), A.BG=4, D.BG=7, A.WG=10, D.WG=1)
 m.bw.sp <- data.frame(species=unique(EggsT.Seas$species), A.BG=4, D.BG=7, A.WG=10, D.WG=1)
+
 a.var.mov <- function(DF.spp, m.bw.spp){
   DF.spp.df <- as.data.frame(DF.spp)
   if(class(DF.spp) != "SpatialPointsDataFrame") {
