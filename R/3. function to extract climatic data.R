@@ -473,7 +473,6 @@ a.var.mig.batch7 <- function(r.Tmax.LTM = NULL, r.Tmin.LTM = NULL, r.Tmax.TS = N
     # 1.4.1 cada espécie migratória na pasta e..
     sp.shp <- shapefile(spp.folder.F[grep(sub(" ", "_", spp.list[s]), spp.folder.F)])
 
-    ## TODO - make a loop for each breeding season area
     #- separate OBS by area of m.bw.sp
     m.bw.sp <- m.bw.spp[m.bw.spp$species == paste(spp.list[s]),]
 
